@@ -1,27 +1,27 @@
+import React from "react";
 
-
-const Student = (props) => {
-  const fullName = props.name;
-  const programmingExp= props.experience;
-  const childCom = props.children;
-  return(
-    <div className="container p-4">
-     
-      <div className="row border">
-        <div className="col-2"> 
-          <img src={props.headshot}
-          className="w-100 py-2" alt="profile">
-          </img>
+class Student extends React.Component {
+  
+  render() {
+    return(
+      <div className="container p-4 p-1">
+      
+        <div className="row border">
+          <div className="col-2"> 
+            <img src={this.props.headshot}
+            className="w-100 py-2" alt="profile">
+            </img>
+          </div>
+          <div className="col-8">
+            {this.props.name} <br/>
+            Programming Experience {this.props.experience} years
+          </div>
+        <div className="col-2">
+          {this.props.children}
         </div>
-        <div className="col-8">
-          {fullName} <br/>
-          Programming Experience {programmingExp} years
         </div>
-       <div className="col-2">
-        {childCom}
-       </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 export default Student;
