@@ -1,10 +1,11 @@
-import Student from "./student";
+import Student from "./Components/Student/student";
 import { faker } from "@faker-js/faker";
+import StudentReview from "./Components/Student/StudentReview";
+
 
 function MainBody() {
   const whatWeWillLearn = "React JS";
   let totalLectures = 3;
-
   return (
     <div>
       <p>
@@ -18,28 +19,33 @@ function MainBody() {
       </ul>
       <div>
         Enter Task:{" "}
-        <input maxLength={7} readOnly={false} placeholder="Ben"></input>
+        <input maxLength="{7}" readOnly="{false}" placeholder="Ben" />
       </div>
       <div>
-      <div className="container row">Students Enrolled</div>
-      <Student
-        experience={2}
-        name="Kris Walley"
-        headshot={faker.image.avatar()}
-      />
-      <Student
-        experience={5}
-        name="Angel Patrice"
-        headshot={faker.image.avatar()}
-      />
-      <Student
-        experience={7}
-        name="Rene Parker"
-        headshot={faker.image.avatar()}
-      />
+        <div className="container row">Students Enrolled</div>
+        <Student
+          experience="{2}"
+          name="Kris Walley"
+          headshot={faker.image.avatar()}
+        >
+          <StudentReview />
+        </Student>
+        <Student
+          experience="{5}"
+          name="Angel Patrice"
+          headshot={faker.image.avatar()}
+        >
+          <StudentReview />
+        </Student>
+        <Student
+          experience="{7}"
+          name="Rene Parker"
+          headshot={faker.image.avatar()}
+        >
+          <StudentReview />
+        </Student>
       </div>
     </div>
   );
 }
-
 export default MainBody;
